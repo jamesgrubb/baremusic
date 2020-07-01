@@ -8,16 +8,15 @@ fill: currentColor;
 const paws = css`
 
 fill: ${({theme}) => theme.colors.blue};
-animation-duration: 1s ;
+animation-duration: 4s ;
 animation-name: hue;
 animation-iteration-count: infinite;
-animation-timing-function: steps(2);
 @keyframes hue{
 from{
     filter: hue-rotate(0deg);
 }
 50%{
-    filter: hue-rotate(160deg);
+    filter: hue-rotate(60deg);
 }
 to{
     filter: hue-rotate(0deg);

@@ -47,8 +47,9 @@ button {
   cursor: pointer;
   outline: none;
   color: currentColor;
+  transition: color 0.2s ease;
   &:hover{
-      color: ${({theme}) => theme.colors.blue}
+      color: ${({theme}) => theme.colors.gray}
   }
 }
 

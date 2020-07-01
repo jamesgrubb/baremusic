@@ -17,11 +17,11 @@ export const Paws = ({width, height, isPlaying}) => (
 
 export const SkipForward = ({width, isPlaying, ...rest}) => (
     <Styled.Svg isPlaying={isPlaying} {...rest} width={width} viewBox="0 0 50 20">
-        <text  x="50%" y="70%" text-anchor="middle">{`––>`}</text>
+        <text  x="50%" y="70%" textAnchor="middle">{`––>`}</text>
     </Styled.Svg>
 )
 export const SkipBackward = ({width, isPlaying, ...rest}) => (
     <Styled.Svg isPlaying={isPlaying} {...rest} width={width} viewBox="0 0 50 20">
-        <text x="50%" y="70%" text-anchor="middle">{`<––`}</text>
+        <text x="50%" y="70%" textAnchor="middle">{`<––`}</text>
     </Styled.Svg>
 )

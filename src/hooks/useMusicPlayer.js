@@ -43,6 +43,7 @@ const useMusicPlayer = () => {
     isPlaying: state.isPlaying,
     playPreviousTrack,
     playNextTrack,
+    currentArtwork: state.currentTrackIndex !== null && state.tracks[state.currentTrackIndex].artwork
   }
 };
 

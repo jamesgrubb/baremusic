@@ -4,23 +4,31 @@ import {color} from 'styled-system'
 export const Live = styled.strong`
 ${color};
 transform: rotate(180deg);
-left: 2em;
+
 writing-mode: vertical-lr;
 font-size: ${({theme}) => theme.textSizeSmall}px;
-position: absolute;
+
 font-variation-settings: "wght" 400;
 letter-spacing: 0.6em;
-bottom: 2em;
+
 display: flex;
 justify-content: center;
 align-items: center;
 /* line-height: 0; */
 text-transform: uppercase;
 &:before{
-    padding-right: 10px;
-    content: "*";
+    margin: 12px;
+    content: "";
+    display: block;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0px 4px 16px rgba(17,17,26,0.1), 0px 8px 24px rgba(17,17,26,0.1), 0px 16px 56px rgba(17,17,26,0.1);
+    background-image: url(${props => props.artwork});
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 3px;
     align-self: center;
-    margin-bottom: 0.4em;
-    font-size: ${({theme}) => theme.fontSizes[4]}px;
-}
+ 
+ 
 `
