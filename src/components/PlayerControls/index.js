@@ -5,7 +5,7 @@ import Wrapper from '../Wrapper'
 import {SkipBackward, SkipForward} from '../icons'
 
 const PlayerControls = ({size}) => {
-    const {isPlaying, togglePlay, playPreviousTrack, playNextTrack} = useMusicPlayer()
+    const {isPlaying, currentTrackIndex, togglePlay, playPreviousTrack, playNextTrack} = useMusicPlayer()
     return(
         <>
         <Wrapper as="button" onClick={togglePlay}>

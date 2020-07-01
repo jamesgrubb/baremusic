@@ -37,6 +37,7 @@ const useMusicPlayer = () => {
   return {
     playTrack,
     togglePlay,
+    currentTrackIndex: state.currentTrackIndex,
     currentTrackName: state.currentTrackIndex !== null && state.tracks[state.currentTrackIndex].name,
     trackList: state.tracks,
     isPlaying: state.isPlaying,

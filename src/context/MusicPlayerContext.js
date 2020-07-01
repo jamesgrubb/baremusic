@@ -4,6 +4,7 @@ export const MusicPlayerContext = React.createContext([{},()=>{}])
 
 export const MusicPlayerProvider = ({children}) => {
 const [state,setState] = useState({
+    audioPlayer: new Audio(),
     tracks: [
         {
             name: 'Go For Landing',
