@@ -1,15 +1,13 @@
-import React,{useState} from 'react';
+import React from 'react';
 import {GlobalStyles} from './GlobalStyles'
-import {Play,Paws} from './components/icons'
 import Wrapper from './components/Wrapper'
 import {ThemeProvider} from 'styled-components'
 import {theme} from './theme'
 import Live from './components/Live'
-import Controls from './components/Controls'
 import {MusicPlayerProvider} from './context/MusicPlayerContext'
 import PlayerControls from './components/PlayerControls'
 function App() {
-  const [isPlaying, setIsPlaying] = useState(true)
+
   return (
     <>
     <MusicPlayerProvider>
