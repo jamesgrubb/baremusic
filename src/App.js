@@ -6,6 +6,7 @@ import {theme} from './theme'
 import Live from './components/Live'
 import {MusicPlayerProvider} from './context/MusicPlayerContext'
 import PlayerControls from './components/PlayerControls'
+import Header from './components/Header'
 function App() {
 
   return (
@@ -15,7 +16,7 @@ function App() {
     <GlobalStyles />
     <Wrapper as="main" display="flex" position="relative" alignItems="center" justifyContent="center" maxWidth="1170px" height="100%" mr="auto" ml="auto" p={[2,3]}>
       <PlayerControls size="12vmin" />
-<h1><span>bare</span><span>music</span></h1>
+      <Header ariaRole="header" title="Bare" />
 <Live color="blue">Go For Landing</Live>
     </Wrapper>
     </ThemeProvider>

@@ -62,23 +62,6 @@ button:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
-h1{
-    position: absolute;
-    font-variation-settings:'wght' 400, 'MONO' 0, 'CASL' 0;
-    left: 2em;
-    top: 2em;
-    font-size: 14px;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    > span{
-        width: 50%;
-        margin: 0.1em;
-    }
-}
+
 
 `

@@ -26,8 +26,8 @@ to{
 
 export const Svg = styled.svg.attrs(props => ({
     xmlns : 'http://www.w3.org/2000/svg',
-    width: props.width,
-    height: props.height,
+    width: "100%",
+    height: "100%",
 
 }))`
 ${props => props.isPlaying ? paws : playing}

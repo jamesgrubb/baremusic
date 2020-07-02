@@ -1,7 +1,15 @@
 import styled from 'styled-components'
-import {flexbox, color, position, layout, compose, space} from 'styled-system'
+import {system, flexbox, color, position, layout, compose, space} from 'styled-system'
+
+const transform = system({
+    prop: 'transform',
+    cssProperty: 'transform'
+})
 
 export const Wrapper = styled.div`
+${system({
+    transform: true
+})};
 ${compose(
     flexbox,
     color,

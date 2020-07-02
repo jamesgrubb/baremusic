@@ -24,7 +24,8 @@ const [state,setState] = useState({
         }
     ],
     currentTrackIndex: null,
-    isPlaying: false
+    isPlaying: false,
+    canPlay: null
 })
 
     return(
