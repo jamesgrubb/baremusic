@@ -68,7 +68,7 @@ h1{
     left: 2em;
     top: 2em;
     font-size: 14px;
-    writing-mode: vertical-lr;
+    writing-mode: vertical-rl;
     text-orientation: upright;
     text-transform: uppercase;
     display: flex;
