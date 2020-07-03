@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import {color} from 'styled-system'
-import css from '@styled-system/css'
 
 export const Live = styled.strong`
 ${color};
