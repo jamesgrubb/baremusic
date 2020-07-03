@@ -2,11 +2,11 @@ import styled from 'styled-components'
 import {Wrapper} from '../Wrapper/Styles'
 
 export const Header = styled(Wrapper).attrs({
-    'aria-role' : 'header',            
+
 })`
 `
 export const Title = styled(Wrapper).attrs({
-    'aria-role': 'title'
+
 })`
     font-variation-settings:'wght' 400, 'MONO' 0, 'CASL' 0;
     font-size: 14px;

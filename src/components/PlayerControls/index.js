@@ -3,16 +3,16 @@ import useMusicPlayer from '../../hooks/useMusicPlayer'
 import {Play,Paws} from '../icons'
 import Wrapper from '../Wrapper'
 import {SkipBackward, SkipForward} from '../icons'
-
+const bareSize = ["68vmin","40vmin"]
 const PlayerControls = () => {
     const {isPlaying, currentTrackIndex, canPlay, playTrack, togglePlay, playPreviousTrack, playNextTrack} = useMusicPlayer()
     console.log("PlayerControls -> currentTrackIndex", currentTrackIndex)
     
     return(
         <>
-        {currentTrackIndex === null ? <Wrapper width={["68vmin","60vmin"]} as="button" onClick={()=> playTrack(0)}>
+        {currentTrackIndex === null ? <Wrapper width={bareSize} as="button" onClick={()=> playTrack(0)}>
         <Play />
-        </Wrapper> : <Wrapper as="button" width={["68vmin","60vmin"]} onClick={togglePlay}>
+        </Wrapper> : <Wrapper as="button" width={bareSize} onClick={togglePlay}>
         {isPlaying ? (<Paws isPlaying />) : (<Play />)  } 
         </Wrapper>}
         

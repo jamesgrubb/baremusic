@@ -7,6 +7,7 @@ import Live from './components/Live'
 import {MusicPlayerProvider} from './context/MusicPlayerContext'
 import PlayerControls from './components/PlayerControls'
 import Header from './components/Header'
+import Headphones from './components/Headphones'
 function App() {
 
   return (
@@ -18,6 +19,7 @@ function App() {
       <PlayerControls size="12vmin" />
       <Header ariaRole="header" title="Bare" />
 <Live color="blue">Go For Landing</Live>
+<Headphones />
     </Wrapper>
     </ThemeProvider>
     </MusicPlayerProvider>
