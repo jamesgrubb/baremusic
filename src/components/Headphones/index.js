@@ -1,7 +1,9 @@
-import React , {Suspense} from "react";
-import { Canvas, useLoader } from "react-three-fiber";
+import React , {Suspense, useContext, useRef} from "react";
+import {ThemeContext} from 'styled-components'
+import { Canvas, useLoader, useFrame, useThree } from "react-three-fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-
+import Wrapper from '../Wrapper'
+import useMusicPlayer from '../../hooks/useMusicPlayer'
 
 function Loading() {
   return (
@@ -19,33 +21,54 @@ function Loading() {
   );
 }
 
-function ArWing() {
-  const {nodes} = useLoader(GLTFLoader, "scene.gltf");
-// console.log(model.nodes)
+function ArWing({color, isPlaying}) {
+  const groupRef = useRef()
+  const {clock} = useThree()
+  useFrame(() => {
+    groupRef.current.position.y = isPlaying ? 0.1 / Math.sin(clock.getElapsedTime()):  groupRef.current.position.y
+  })
+  const {nodes} = useLoader(GLTFLoader, "Headphones.glb");
+  
+console.log(nodes)
   return (
-    <group position={[0,0,-20]}>
-      <mesh visible geometry={nodes.mesh_0.geometry}>
-        <meshBasicMaterial
+    <group ref={groupRef} position={isPlaying ? [-0.04,0.8,3] : [-0.04,1.2,1.1] }>
+      <mesh visible geometry={nodes.Default.geometry}>
+        {isPlaying ? <meshNormalMaterial
           attach="material"
-          color="red"
+          color={color}
           clearCoatRoughness={2}
           clearCoat={0.3}
           flatShading={false}
           
 
-        />
+        /> : <meshBasicMaterial
+          attach="material"
+          color={color}
+          clearCoatRoughness={2}
+          clearCoat={0.3}
+          flatShading={false}
+          
+
+        />}
+        
       </mesh>
     </group>
   );
 }
 
-export default function App() {
+export default ()=> {
+  const themeContext = useContext(ThemeContext)
+  const {isPlaying} = useMusicPlayer()
+  console.log(themeContext)
   return (
-    <Canvas >
+    // <Wrapper bg="blue" position="absolute" right="50%" height="30vmin" transform="translate(50%,-80%)">
+    <Wrapper style={{pointerEvents:"none"}} width="100%" height="100%" position="absolute" left="0" top="0">
+    <Canvas  >
       {/* <directionalLight intensity={5} /> */}
       <Suspense fallback={<Loading />}>
-        <ArWing />
+        <ArWing isPlaying={isPlaying} color={themeContext.colors.grayLight} />
       </Suspense>
     </Canvas>
+    </Wrapper>
   );
 }

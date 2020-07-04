@@ -62,6 +62,9 @@ button:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
+canvas{
+    pointer-events: none;
+}
 
 
 `
