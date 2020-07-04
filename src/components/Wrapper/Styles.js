@@ -16,5 +16,6 @@ ${compose(
     position,
     layout,
     space,
+    transform
 )}
 `

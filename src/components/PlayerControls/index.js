@@ -5,8 +5,8 @@ import Wrapper from '../Wrapper'
 import {SkipBackward, SkipForward} from '../icons'
 const bareSize = ["68vmin","40vmin"]
 const PlayerControls = () => {
-    const {isPlaying, currentTrackIndex, canPlay, playTrack, togglePlay, playPreviousTrack, playNextTrack} = useMusicPlayer()
-    console.log("PlayerControls -> currentTrackIndex", currentTrackIndex)
+    const {isPlaying, currentTrackIndex, playTrack, togglePlay, playPreviousTrack, playNextTrack} = useMusicPlayer()
+    
     
     return(
         <>

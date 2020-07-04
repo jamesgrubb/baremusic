@@ -35,7 +35,7 @@ function ArWing({color, isPlaying}) {
   })
   const {nodes} = useLoader(GLTFLoader, "Headphones.glb");
   
-console.log(nodes)
+
   return (
     <a.group ref={groupRef} position={props.size }>
       <mesh visible geometry={nodes.Default.geometry}>
@@ -65,7 +65,6 @@ console.log(nodes)
 export default ()=> {
   const themeContext = useContext(ThemeContext)
   const {isPlaying} = useMusicPlayer()
-  console.log(themeContext)
   return (
     // <Wrapper bg="blue" position="absolute" right="50%" height="30vmin" transform="translate(50%,-80%)">
     <Wrapper style={{pointerEvents:"none"}} width="100%" height="100%" position="absolute" left="0" top="0">
