@@ -1,11 +1,13 @@
 import React , {Suspense, useContext, useRef} from "react";
+// import { useSpring, a } from 'react-spring/three'
 import {ThemeContext} from 'styled-components'
 import { Canvas, useLoader, useFrame, useThree } from "react-three-fiber";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import Wrapper from '../Wrapper'
 import useMusicPlayer from '../../hooks/useMusicPlayer'
 import lerp from 'lerp'
-import { useSpring, a } from 'react-spring/three'
+
+
+let GLTFLoader
 
 function Loading() {
   return (
@@ -24,11 +26,12 @@ function Loading() {
 }
 
 function ArWing({color, isPlaying}) {
+  GLTFLoader = require('three/examples/jsm/loaders/GLTFLoader').GLTFLoader;
   const groupRef = useRef()
   const {clock} = useThree()
-  const props = useSpring({
-    size: isPlaying ? [-0.04,0.8,3] : [-0.04,1.2,1.1]    
-  })
+  // const props = useSpring({
+  //   size: isPlaying ? [-0.04,0.8,3] : [-0.04,1.2,1.1]    
+  // })
   useFrame(() => {
     groupRef.current.position.y = isPlaying ?   0.6 + lerp(0.05,-0.05,Math.sin(clock.getElapsedTime())):  groupRef.current.position.y
     groupRef.current.rotation.x = isPlaying ?   lerp(0.1,-0.1,Math.sin(clock.getElapsedTime())):  groupRef.current.rotation.y
@@ -37,7 +40,7 @@ function ArWing({color, isPlaying}) {
   
 
   return (
-    <a.group ref={groupRef} position={props.size }>
+    <group ref={groupRef} position={isPlaying ? [-0.04,0.8,3] : [-0.04,1.2,1.1] }>
       <mesh visible geometry={nodes.Default.geometry}>
         {isPlaying ? <meshNormalMaterial
           attach="material"
@@ -58,7 +61,7 @@ function ArWing({color, isPlaying}) {
         />}
         
       </mesh>
-    </a.group>
+    </group>
   );
 }
 
